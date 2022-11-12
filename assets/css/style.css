@@ -157,23 +157,6 @@ body.dark #todo_container .todo_check_btn {
   border-color: hsl(237, 14%, 26%);
 }
 
-#todo_container .todo_check_btn:hover, 
-body.dark #todo_container .todo_check_btn:hover {
-  background: linear-gradient(var(--todo-bg), var(--todo-bg)) padding-box,
-    var(--primary-grad) border-box;
-  border-radius: 50%;
-  border: 1.5px solid transparent;
-}
-
-#todo_container .todo_check_btn_clicked, 
-#todo_container .todo_check_btn_clicked:hover,
-body.dark #todo_container .todo_check_btn_clicked:hover,
-#todo_results .result_body .todo_completed .todo_check_btn {
-  color: white;
-  background: var(--primary-grad);
-  border-color: var(--todo-bg);
-}
-
 #todo_form,
 #todo_results {
   --rad: 4px;
@@ -217,58 +200,51 @@ body.dark #todo_container .todo_check_btn_clicked:hover,
   --gap: 24px;
   opacity: 0;
 }
-#todo_results .result_body{
-  min-height: 67px;
+#todo_results .result_body {
+  min-height: 20px;
 }
-#todo_results .result_body .todo{
+#todo_results .result_body .todo {
   cursor: grab;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--gap);
-  padding-block: 15px;
+  padding-block: 0.75rem;
   padding-inline: var(--gap);
   border-bottom: 1px solid var(--task-completed-txt);
 }
-#todo_results .result_body .todo .todo_text{
+#todo_results .result_body .todo .todo_text {
   color: var(--task-incompleted-txt);
   text-transform: capitalize;
 }
 
-#todo_results .result_body .todo .todo_remove_btn{
-  cursor: pointer;
-  pointer-events: none;
+#todo_results .result_body .todo .todo_remove_btn {
   border: none;
   outline: none;
   background: transparent;
   margin-left: auto;
   color: var(--task-completed-txt);
   scale: 1.4;
-  opacity: 0;
   transition: var(--transop);
 }
-#todo_results .result_body .todo:hover .todo_remove_btn{
-  pointer-events: all;
-  opacity: 1;
-}
 
-#todo_results .result_body .todo_completed .todo_text{
+#todo_results .result_body .todo_completed .todo_text {
   color: var(--task-completed-txt);
   text-decoration: line-through;
 }
 
-#todo_results .result_footer{
+#todo_results .result_footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.875rem;
   color: var(--text-normal);
   padding-inline: var(--gap);
-  padding-block: 1rem;
+  padding-block: 0.4rem;
   position: relative;
 }
 
-#todo_results .result_footer .todo_filter{
+#todo_results .result_footer .todo_filter {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -278,11 +254,11 @@ body.dark #todo_container .todo_check_btn_clicked:hover,
   background-color: var(--todo-bg);
   border-radius: var(--rad);
   box-shadow: var(--shadow);
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 #todo_results .result_footer .todo_filter button,
-#clear_completed{
+#clear_completed {
   cursor: pointer;
   border: none;
   outline: none;
@@ -293,30 +269,67 @@ body.dark #todo_container .todo_check_btn_clicked:hover,
   transition: var(--transtext);
 }
 
-#todo_results .result_footer .todo_filter button:hover,
-#clear_completed:hover,
-#todo_results .result_body .todo .todo_remove_btn:hover {
-  color: var(--task-incompleted-txt);
-}
-#todo_results .result_footer .todo_filter button.active{
+#todo_results .result_footer .todo_filter button.active {
   color: var(--primary);
 }
-#todo_results .result_footer .todo_filter{
+#todo_results .result_footer .todo_filter {
   font-weight: 700;
   display: flex;
   gap: 1rem;
 }
-#todo_results .result_footer .todo_filter .dragdrop{
+#todo_results .result_footer .todo_filter .dragdrop {
   position: absolute;
   top: calc(100% + 1.3rem);
   font-weight: 400;
   color: var(--task-completed-txt);
 }
 
+#todo_container .todo_check_btn_clicked,
+#todo_results .result_body .todo_completed .todo_check_btn {
+  color: white;
+  background: var(--primary-grad);
+  border-color: var(--todo-bg);
+}
+
+@media (hover: hover) {
+  /* hover supported */
+  #todo_container .todo_check_btn:hover,
+  body.dark #todo_container .todo_check_btn:hover {
+    background: linear-gradient(var(--todo-bg), var(--todo-bg)) padding-box,
+      var(--primary-grad) border-box;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+  }
+
+  #todo_container .todo_check_btn_clicked:hover,
+  body.dark #todo_container .todo_check_btn_clicked:hover {
+    color: white;
+    background: var(--primary-grad);
+    border-color: var(--todo-bg);
+  }
+
+  #todo_results .result_body .todo .todo_remove_btn{
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    color: var(--task-completed-txt);
+  }
+
+  #todo_results .result_footer .todo_filter button:hover,
+  #clear_completed:hover,
+  #todo_results .result_body .todo .todo_remove_btn:hover {
+    color: var(--task-incompleted-txt);
+  }
+
+  #todo_results .result_body .todo:hover .todo_remove_btn {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
 /* media 575 */
 @media screen and (min-width: 575px) {
   #main {
-    --img-height: 300px;
+    --img-height: 330px;
   }
   #img-bg {
     background-image: url("../images/bg-desktop-light.jpg");
@@ -325,7 +338,7 @@ body.dark #todo_container .todo_check_btn_clicked:hover,
     background-image: url("../images/bg-desktop-dark.jpg");
   }
   #todo_container {
-    --top: 75px;
+    --top: 85px;
   }
   #todo_container .head {
     font-size: 32px;
@@ -339,11 +352,15 @@ body.dark #todo_container .todo_check_btn_clicked:hover,
   #todo_inp {
     height: 65px;
   }
-  #todo_results .result_body .todo{
+  #todo_results .result_body .todo {
     padding-block: 20px;
   }
 
-  #todo_results .result_footer .todo_filter{
+  #todo_results .result_footer{
+    padding-block: 1rem; 
+  }
+
+  #todo_results .result_footer .todo_filter {
     all: unset;
     display: flex;
     gap: 1rem;
