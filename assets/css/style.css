@@ -291,6 +291,13 @@ body.dark #todo_container .todo_check_btn {
   border-color: var(--todo-bg);
 }
 
+.sr-only{
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  visibility: hidden;
+}
+
 @media (hover: hover) {
   /* hover supported */
   #todo_container .todo_check_btn:hover,

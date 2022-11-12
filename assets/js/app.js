@@ -25,11 +25,11 @@ $(document).ready(function () {
 
     if (mode == "dark") {
       $("body").addClass("dark");
-      $("#modechanger").html('<i class="bi bi-brightness-high-fill"></i>');
+      $("#modechanger").html('<i class="bi bi-brightness-high-fill"></i><span class="sr-only">themechanger</span>');
       localStorage.setItem("theme", "dark");
     } else {
       $("body").removeClass("dark");
-      $("#modechanger").html('<i class="bi bi-moon-fill"></i>');
+      $("#modechanger").html('<i class="bi bi-moon-fill"></i><span class="sr-only">themechanger</span>');
       localStorage.setItem("theme", "light");
     }
 
