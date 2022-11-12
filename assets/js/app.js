@@ -195,7 +195,6 @@ $(document).ready(function () {
   });
 
   // events
-
   // todo form
   let id = 101;
   let idCheck = true;
