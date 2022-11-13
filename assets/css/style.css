@@ -109,7 +109,7 @@ body.dark #img-bg {
 
 #todo_container {
   --top: 45px;
-  width: min(550px, calc(100% - 2rem));
+  width: min(600px, calc(100% - 2rem));
   position: relative;
   top: calc((var(--img-height) * -1) + var(--top));
   left: 50%;
@@ -345,10 +345,14 @@ body.dark #todo_container .todo_check_btn {
     background-image: url("../images/bg-desktop-dark.jpg");
   }
   #todo_container {
-    --top: 85px;
+    --top: 90px;
   }
   #todo_container .head {
     font-size: 32px;
+  }
+  #todo_container .head .title{
+    font-size: 2.75rem;
+    letter-spacing: 6px;
   }
   #todo_container .body {
     gap: 1.5rem;
