@@ -345,7 +345,7 @@ body.dark #todo_container .todo_check_btn {
     background-image: url("../images/bg-desktop-dark.jpg");
   }
   #todo_container {
-    --top: 90px;
+    --top: 80px;
   }
   #todo_container .head {
     font-size: 32px;
