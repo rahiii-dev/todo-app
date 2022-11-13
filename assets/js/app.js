@@ -36,15 +36,6 @@ $(document).ready(function () {
     $("#modechanger").fadeIn(400);
   }
 
-  //modechanger
-  $("#modechanger").click(function () {
-    if ($("body").hasClass("dark")) {
-      changeMode();
-    } else {
-      changeMode("dark");
-    }
-  });
-
   // settodo html
   function setHtml(id, todo, completed) {
     const todoDiv = document.createElement("div");
@@ -195,6 +186,15 @@ $(document).ready(function () {
   });
 
   // events
+  //modechanger
+  $("#modechanger").click(function () {
+    if ($("body").hasClass("dark")) {
+      changeMode();
+    } else {
+      changeMode("dark");
+    }
+  });
+
   // todo form
   let id = 101;
   let idCheck = true;
@@ -266,6 +266,7 @@ $(document).ready(function () {
     });
 
     localStorage.setItem("todos", JSON.stringify(todos));
+    
     loadTodo("all");
     removeActive();
     $("#all_todo").addClass("active");
